@@ -1,6 +1,7 @@
 import React from 'react'
 import WorkImg from '../assets/projects/workImg.jpeg'
 import RealEstate from '../assets/projects/realestate.jpg'
+import metabnb from '../assets/projects/meta_bnb.png'
 
 const Projects = () => {
   return (
@@ -16,19 +17,19 @@ const Projects = () => {
 
 
                 {/* Grid Item */}
-                <div style={{backgroundImage: `url(${WorkImg})`}} className='shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div'>
+                <div style={{backgroundImage: `url(${metabnb})`}} className='shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div'>
 
 
                     {/* hover effects */}
                     <div className='opacity-0 group-hover:opacity-100'>
                         <span className='text-2xl font-bold tracking-wider'> ReactJs Application</span>
                         <div className='pt-8 text-center'>
-                            <a href="/">
+                            <a href="https://thetechgoddess.github.io/meta_bnb/">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Open Project
                                 </button>
                             </a>
-                            <a href="/">
+                            <a href="https://github.com/TheTechGoddess/meta_bnb">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Check Code
                                 </button>
