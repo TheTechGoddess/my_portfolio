@@ -12,27 +12,27 @@ const Contact = () => {
                 <div className='lg:hidden'>
             <ul className='flex justify-between my-8'>
                 <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-blue-600 rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/"><FaLinkedin size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://www.linkedin.com/in/favour-enwonwu-kc/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={30}/>
                         </a>
                 </li>
                 
                 <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#333] rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/"><FaGithub size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://github.com/TheTechGoddess" target="_blank" rel="noopener noreferrer"><FaGithub size={30}/>
                         </a>
                 </li>
 
                 <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#657725] rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/"><HiOutlineMail size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/" target="_blank" rel="noopener noreferrer"><HiOutlineMail size={30}/>
                         </a>
                 </li>
 
                 <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#565f65] rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/"><BsFillPersonLinesFill size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/" target="_blank" rel="noopener noreferrer"><BsFillPersonLinesFill size={30}/>
                         </a>
                 </li>
 
                 <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#fff] rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#1DA1F2]' href="/"><FaTwitter size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#1DA1F2]' href="https://twitter.com/Tech__Goddess?t=OQ9_Ywu9MShqvLcxRs41dw&s=09" target="_blank" rel="noopener noreferrer"><FaTwitter size={30}/>
                         </a>
                 </li>
             </ul>
