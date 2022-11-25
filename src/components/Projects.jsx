@@ -21,8 +21,8 @@ const Projects = () => {
 
 
                     {/* hover effects */}
-                    <div className='opacity-0 group-hover:opacity-100'>
-                        <span className='text-2xl font-bold tracking-wider'> ReactJs Application</span>
+                    <div className='opacity-0 group-hover:opacity-100 text-center'>
+                        <span className='text-2xl font-bold tracking-wider'> Meta Bnb</span>
                         <div className='pt-8 text-center'>
                             <a href="https://thetechgoddess.github.io/meta_bnb/">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
