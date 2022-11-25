@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/my_portfolio/static/css/main.7af626b5.css",
-    "main.js": "/my_portfolio/static/js/main.03b170a5.js",
+    "main.css": "/my_portfolio/static/css/main.01960147.css",
+    "main.js": "/my_portfolio/static/js/main.3dbb4f2a.js",
     "static/media/realestate.jpg": "/my_portfolio/static/media/realestate.44fd19f4c6872731149c.jpg",
     "static/media/meta_bnb.png": "/my_portfolio/static/media/meta_bnb.b5a251ccb1f06513945a.png",
     "static/media/techgoddesslogo.png": "/my_portfolio/static/media/techgoddesslogo.c545f81a24b6e9ed46d0.png",
@@ -12,11 +12,11 @@
     "static/media/css.png": "/my_portfolio/static/media/css.69a82c2d9e45c933a9cb.png",
     "static/media/javascript.png": "/my_portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/my_portfolio/index.html",
-    "main.7af626b5.css.map": "/my_portfolio/static/css/main.7af626b5.css.map",
-    "main.03b170a5.js.map": "/my_portfolio/static/js/main.03b170a5.js.map"
+    "main.01960147.css.map": "/my_portfolio/static/css/main.01960147.css.map",
+    "main.3dbb4f2a.js.map": "/my_portfolio/static/js/main.3dbb4f2a.js.map"
   },
   "entrypoints": [
-    "static/css/main.7af626b5.css",
-    "static/js/main.03b170a5.js"
+    "static/css/main.01960147.css",
+    "static/js/main.3dbb4f2a.js"
   ]
 }
