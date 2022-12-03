@@ -27,7 +27,7 @@ const Contact = () => {
                 </li>
 
                 <li className='w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl'>
-                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://docs.google.com/document/d/e/2PACX-1vSxs1FZqhzG4OtXMBTRHQu_KMLqtwG-CoKNT6bE0GgHk-wJPgnr4qVTQc6bs1fw4odcKkUyELtttd_X/pub" download><BsFillPersonLinesFill size={30}/>
+                    <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://docs.google.com/document/d/e/2PACX-1vR7icKsPWqgK5TCeM-s9Z4LJ80o0dLby96R7aLh7funQUlAmEFo7W_m8RGCpHVdCMQ_YUBVQI48Jxy1/pub" download><BsFillPersonLinesFill size={30}/>
                         </a>
                 </li>
 
