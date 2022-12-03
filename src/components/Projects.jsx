@@ -23,12 +23,12 @@ const Projects = () => {
                     <div className='opacity-0 group-hover:opacity-100 text-center'>
                         <span className='text-2xl font-bold tracking-wider'> Meta Bnb</span>
                         <div className='pt-8 text-center'>
-                            <a href="https://thetechgoddess.github.io/meta_bnb/">
+                            <a href="https://thetechgoddess.github.io/meta_bnb/" target="_blank" rel="noopener noreferrer">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Open Project
                                 </button>
                             </a>
-                            <a href="https://github.com/TheTechGoddess/meta_bnb">
+                            <a href="https://github.com/TheTechGoddess/meta_bnb" target="_blank" rel="noopener noreferrer">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Check Code
                                 </button>
@@ -45,12 +45,12 @@ const Projects = () => {
                     <div className='opacity-0 group-hover:opacity-100 text-center'>
                         <span className='text-2xl font-bold tracking-wider'>Nasa Pictures</span>
                         <div className='pt-8 text-center'>
-                            <a href="https://thetechgoddess.github.io/meta_bnb/">
+                            <a href="https://thetechgoddess.github.io/NASA-API-project/" target="_blank" rel="noopener noreferrer">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Open Project
                                 </button>
                             </a>
-                            <a href="https://github.com/TheTechGoddess/meta_bnb">
+                            <a href="https://thetechgoddess.github.io/NASA-API-project/" target="_blank" rel="noopener noreferrer">
                                 <button className='text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg'>
                                     Check Code
                                 </button>

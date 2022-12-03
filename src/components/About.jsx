@@ -15,7 +15,7 @@ const About = () => {
                     <p className='sm:text-right text-4xl font-bold'>Hi, I'm Favour. Nice to meet you. Please take a look around.</p>
                 </div>
                 <div>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta vero eos, iure, nobis vel quisquam velit aliquam et nam, architecto vitae unde! Molestiae, atque voluptate magnam quae distinctio accusamus aut! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, velit eius omnis quidem eaque possimus excepturi aspernatur, maxime aliquid eos iusto assumenda. Iusto hic qui porro sit soluta facilis excepturi?</p>
+                    <p>"I am Favour Enwonwu, a Frontend Developer with 2 years experience with HTML, CSS, Javascript and React. I enjoy tarnsforming UI/UX designs into functional web applications/sites. I as well love to learn new methods and technologies from achieving the same goal"</p>
                 </div>
             </div>
         </div>
