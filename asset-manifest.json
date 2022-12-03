@@ -1,11 +1,10 @@
 {
   "files": {
     "main.css": "/my_portfolio/static/css/main.01960147.css",
-    "main.js": "/my_portfolio/static/js/main.177dc242.js",
-    "static/media/realestate.jpg": "/my_portfolio/static/media/realestate.44fd19f4c6872731149c.jpg",
+    "main.js": "/my_portfolio/static/js/main.1774d28f.js",
+    "static/media/nasa_pictures.png": "/my_portfolio/static/media/nasa_pictures.09fd64f1416dce4cde75.png",
     "static/media/meta_bnb.png": "/my_portfolio/static/media/meta_bnb.b5a251ccb1f06513945a.png",
     "static/media/techgoddesslogo.png": "/my_portfolio/static/media/techgoddesslogo.c545f81a24b6e9ed46d0.png",
-    "static/media/workImg.jpeg": "/my_portfolio/static/media/workImg.e4c66be6ae2ae4f83608.jpeg",
     "static/media/react.png": "/my_portfolio/static/media/react.0cf951a69d8e58f83f9d.png",
     "static/media/github.png": "/my_portfolio/static/media/github.3b9e32903aa89111875d.png",
     "static/media/html.png": "/my_portfolio/static/media/html.2ba4fabc69a89a8f71e6.png",
@@ -13,10 +12,10 @@
     "static/media/javascript.png": "/my_portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/my_portfolio/index.html",
     "main.01960147.css.map": "/my_portfolio/static/css/main.01960147.css.map",
-    "main.177dc242.js.map": "/my_portfolio/static/js/main.177dc242.js.map"
+    "main.1774d28f.js.map": "/my_portfolio/static/js/main.1774d28f.js.map"
   },
   "entrypoints": [
     "static/css/main.01960147.css",
-    "static/js/main.177dc242.js"
+    "static/js/main.1774d28f.js"
   ]
 }
