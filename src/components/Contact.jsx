@@ -11,34 +11,34 @@ const Contact = () => {
                 <p className='text-4xl font-bold inline border-b-4 border-[yellow]'>Contact Me</p>
                 <div className='lg:hidden'>
             <ul className='flex justify-between my-8'>
-                <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-blue-600 rounded-3xl'>
+                <li className='w-[60px] h-[60px] flex duration-300 bg-blue-600 rounded-3xl'>
                     <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://www.linkedin.com/in/favour-enwonwu-kc/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={30}/>
                         </a>
                 </li>
                 
-                <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#333] rounded-3xl'>
+                <li className='w-[60px] h-[60px] flex duration-300 bg-[#333] rounded-3xl'>
                     <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://github.com/TheTechGoddess" target="_blank" rel="noopener noreferrer"><FaGithub size={30}/>
                         </a>
                 </li>
 
-                <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#657725] rounded-3xl'>
+                <li className='w-[60px] h-[60px] flex duration-300 bg-[#657725] rounded-3xl'>
                     <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="/" target="_blank" rel="noopener noreferrer"><HiOutlineMail size={30}/>
                         </a>
                 </li>
 
-                <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#565f65] rounded-3xl'>
+                <li className='w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl'>
                     <a className='flex justify-between items-center w-full text-[#F8EFF1]' href="https://docs.google.com/document/d/e/2PACX-1vSxs1FZqhzG4OtXMBTRHQu_KMLqtwG-CoKNT6bE0GgHk-wJPgnr4qVTQc6bs1fw4odcKkUyELtttd_X/pub" download target="_blank" rel="noopener noreferrer"><BsFillPersonLinesFill size={30}/>
                         </a>
                 </li>
 
-                <li className='w-[60px] h-[60px] flex hover:ml-[-10px] duration-300 bg-[#fff] rounded-3xl'>
+                <li className='w-[60px] h-[60px] flex duration-300 bg-[#fff] rounded-3xl'>
                     <a className='flex justify-between items-center w-full text-[#1DA1F2]' href="https://twitter.com/Tech__Goddess?t=OQ9_Ywu9MShqvLcxRs41dw&s=09" target="_blank" rel="noopener noreferrer"><FaTwitter size={30}/>
                         </a>
                 </li>
             </ul>
 
         </div>
-                <p className='py-4 '>Submit the form below or send an email to - favourenwonwukc@gmail.com</p>
+                <p className='py-4 '>Submit the form below or send an email to - favourenwonwukc@gmail.com -- to reach out to me for collaborations and gigs...</p>
             </div>
             <input type="text" placeholder='Name' name='name' className='p-2 bg-[#657725] rounded-lg'/>
             <input type="email" placeholder='Email' name='email' className='my-4 p-2 bg-[#657725] rounded-lg' />
