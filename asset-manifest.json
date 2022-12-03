@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/my_portfolio/static/css/main.01960147.css",
-    "main.js": "/my_portfolio/static/js/main.5341b191.js",
+    "main.js": "/my_portfolio/static/js/main.9a172671.js",
     "static/media/nasa_pictures.png": "/my_portfolio/static/media/nasa_pictures.09fd64f1416dce4cde75.png",
     "static/media/meta_bnb.png": "/my_portfolio/static/media/meta_bnb.b5a251ccb1f06513945a.png",
     "static/media/techgoddesslogo.png": "/my_portfolio/static/media/techgoddesslogo.c545f81a24b6e9ed46d0.png",
@@ -12,10 +12,10 @@
     "static/media/javascript.png": "/my_portfolio/static/media/javascript.1ccd6ef9bb1f9c84ef00.png",
     "index.html": "/my_portfolio/index.html",
     "main.01960147.css.map": "/my_portfolio/static/css/main.01960147.css.map",
-    "main.5341b191.js.map": "/my_portfolio/static/js/main.5341b191.js.map"
+    "main.9a172671.js.map": "/my_portfolio/static/js/main.9a172671.js.map"
   },
   "entrypoints": [
     "static/css/main.01960147.css",
-    "static/js/main.5341b191.js"
+    "static/js/main.9a172671.js"
   ]
 }
