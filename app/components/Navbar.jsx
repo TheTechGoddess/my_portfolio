@@ -9,16 +9,17 @@ import {
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
-import Logo from "../assets/techgoddesslogo.png";
+import Logo from "../assets/tech_logo.png";
 import { Link } from "react-scroll";
+import Image from "next/image";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-[yellow]">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-[#FFFB2E]">
       <div>
-        <img src={Logo} alt="" style={{ width: "80px" }} />
+        <Image src={Logo} alt="logo" width={80} height={80} />
       </div>
       {/* menu */}
       <div>
@@ -104,7 +105,9 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="/"
+              href="https://www.linkedin.com/in/favour-enwonwu-kc/"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               linkedIn <FaLinkedin size={30} />
             </a>
@@ -113,16 +116,18 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#333]">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="/"
+              href="https://github.com/TheTechGoddess"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               github <FaGithub size={30} />
             </a>
           </li>
 
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#657725]">
+          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-secondary">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="/"
+              href="mailto:favourenwonwukc@gmail.com"
             >
               email <HiOutlineMail size={30} />
             </a>
@@ -131,7 +136,9 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f65]">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="/"
+              href="https://docs.google.com/document/d/e/2PACX-1vR7icKsPWqgK5TCeM-s9Z4LJ80o0dLby96R7aLh7funQUlAmEFo7W_m8RGCpHVdCMQ_YUBVQI48Jxy1/pub"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               resume <BsFillPersonLinesFill size={30} />
             </a>
@@ -140,7 +147,9 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#fff]">
             <a
               className="flex justify-between items-center w-full text-[#1DA1F2]"
-              href="/"
+              href="https://twitter.com/Tech__Goddess?t=OQ9_Ywu9MShqvLcxRs41dw&s=09"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               twitter <FaTwitter size={30} />
             </a>

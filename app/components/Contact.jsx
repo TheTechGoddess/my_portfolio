@@ -16,7 +16,7 @@ const Contact = () => {
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-[yellow]">
+          <p className="text-4xl font-bold inline border-b-4 border-[#FFFB2E]">
             Contact Me
           </p>
           <div className="lg:hidden">
@@ -43,10 +43,10 @@ const Contact = () => {
                 </a>
               </li>
 
-              <li className="w-[60px] h-[60px] flex duration-300 bg-[#657725] rounded-3xl">
+              <li className="w-[60px] h-[60px] flex duration-300 bg-secondary rounded-3xl">
                 <a
                   className="flex justify-between items-center w-full text-[#F8EFF1]"
-                  href="/"
+                  href="mailto:favourenwonwukc@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -77,32 +77,34 @@ const Contact = () => {
             </ul>
           </div>
           <p className="py-4 ">
-            Submit the form below or send an email to -
-            favourenwonwukc@gmail.com -- to reach out to me for collaborations
-            and gigs...
+            Submit the form below or email{" "}
+            <a className="underline" href="mailto:favourenwonwukc@gmail.com">
+              favourenwonwukc@gmail.com
+            </a>{" "}
+            to reach me for roles, collaborations, and gigs.
           </p>
         </div>
         <input
           type="text"
           placeholder="Name"
           name="name"
-          className="p-2 bg-[#657725] rounded-lg"
+          className="p-2 bg-secondary rounded-lg"
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
-          className="my-4 p-2 bg-[#657725] rounded-lg"
+          className="my-4 p-2 bg-secondary rounded-lg"
         />
         <textarea
           name="message"
           placeholder="Type your message here"
           id="message"
           rows="6"
-          className="bg-[#657725] p-2 rounded-lg"
+          className="bg-secondary p-2 rounded-lg"
         ></textarea>
 
-        <button className="border-2 bg-[#657725] hover:bg-[#657725] hover:text-black px-4 py-3 my-8 mx-auto flex items-center rounded-lg">
+        <button className="border-2 bg-secondary hover:bg-secondary hover:text-black px-4 py-3 my-8 mx-auto flex items-center rounded-lg">
           Submit
         </button>
       </form>
