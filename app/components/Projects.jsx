@@ -12,6 +12,7 @@ import fitxn from "../assets/projects/fitxn.png";
 import gowa from "../assets/projects/gowa.png";
 import aprotime from "../assets/projects/aprotime.png";
 import loiz from "../assets/projects/loiz.png";
+import compass from "../assets/projects/83compass.png";
 
 const Projects = () => {
   return (
@@ -87,6 +88,30 @@ const Projects = () => {
               <div className="pt-8 text-center">
                 <a
                   href="https://madesoftacademy.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                    Visit
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/*83 Compass */}
+          <div
+            style={{ backgroundImage: `url(${compass.src})` }}
+            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
+          >
+            {/* hover effects */}
+            <div className="opacity-0 group-hover:opacity-100 text-center">
+              <span className="text-2xl font-bold tracking-wider">
+                83 Compass
+              </span>
+              <div className="pt-8 text-center">
+                <a
+                  href="https://www.83compass.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
