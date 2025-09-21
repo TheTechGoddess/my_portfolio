@@ -145,28 +145,6 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* AMNID */}
-          <div
-            style={{ backgroundImage: `url(${amnid.src})` }}
-            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* hover effects */}
-            <div className="opacity-0 group-hover:opacity-100 text-center">
-              <span className="text-2xl font-bold tracking-wider">AMNID</span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://amnid.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
-                    Visit
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
           {/* Youverify OS */}
           <div
             style={{ backgroundImage: `url(${youverify.src})` }}
@@ -180,6 +158,28 @@ const Projects = () => {
               <div className="pt-8 text-center">
                 <a
                   href="https://youverify.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                    Visit
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* AMNID */}
+          <div
+            style={{ backgroundImage: `url(${amnid.src})` }}
+            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
+          >
+            {/* hover effects */}
+            <div className="opacity-0 group-hover:opacity-100 text-center">
+              <span className="text-2xl font-bold tracking-wider">AMNID</span>
+              <div className="pt-8 text-center">
+                <a
+                  href="https://amnid-test.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
