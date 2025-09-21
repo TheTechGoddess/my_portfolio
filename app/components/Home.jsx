@@ -10,12 +10,12 @@ const Home = () => {
     <div name="home" className="w-full h-screen bg-[#000] text-[#FDE7EF] ">
       {/* container */}
       <div className="max-w-[1000px] mx-auto px-8 flex flex-col justify-center h-full">
-        <p className="text-[#FFFB2E]">My name is</p>
+        <p className="text-primary">My name is</p>
         <h1 className="text-4xl sm:text-7xl font-bold">Favour Enwonwu</h1>
         <h2 className="text-4xl sm:text-7xl font-bold text-secondary">
           Frontend Software Engineer
         </h2>
-        <p className="text-[#889] py-4 max-w-[700px]">
+        <p className="text-accent py-4 max-w-[700px]">
           Frontend Engineer with 3.5 years of experience building performant web
           apps in Vue 3/Nuxt 3 and React/Next.js. Skilled in state management
           (Pinia, Vuex, Redux Toolkit) and modern styling (Tailwind CSS). I ship

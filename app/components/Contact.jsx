@@ -16,7 +16,7 @@ const Contact = () => {
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-[#FFFB2E]">
+          <p className="text-4xl font-bold inline border-b-4 border-primary">
             Contact Me
           </p>
           <div className="lg:hidden">
@@ -57,21 +57,10 @@ const Contact = () => {
               <li className="w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl">
                 <a
                   className="flex justify-between items-center w-full text-[#F8EFF1]"
-                  href="https://docs.google.com/document/d/e/2PACX-1vR7icKsPWqgK5TCeM-s9Z4LJ80o0dLby96R7aLh7funQUlAmEFo7W_m8RGCpHVdCMQ_YUBVQI48Jxy1/pub"
+                  href="https://drive.google.com/file/d/1gcyBdLLrA9ll2Y_8nAj5bVgYTCMKQ5Yq/view?usp=sharing"
                   download
                 >
                   <BsFillPersonLinesFill size={30} />
-                </a>
-              </li>
-
-              <li className="w-[60px] h-[60px] flex duration-300 bg-[#fff] rounded-3xl">
-                <a
-                  className="flex justify-between items-center w-full text-[#1DA1F2]"
-                  href="https://twitter.com/Tech__Goddess?t=OQ9_Ywu9MShqvLcxRs41dw&s=09"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaTwitter size={30} />
                 </a>
               </li>
             </ul>
@@ -88,20 +77,20 @@ const Contact = () => {
           type="text"
           placeholder="Name"
           name="name"
-          className="p-2 bg-secondary rounded-lg"
+          className="p-2 bg-secondary rounded-lg text-black placeholder:text-black"
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
-          className="my-4 p-2 bg-secondary rounded-lg"
+          className="my-4 p-2 bg-secondary rounded-lg text-black placeholder:text-black"
         />
         <textarea
           name="message"
           placeholder="Type your message here"
           id="message"
           rows="6"
-          className="bg-secondary p-2 rounded-lg"
+          className="bg-secondary p-2 rounded-lg text-black placeholder:text-black"
         ></textarea>
 
         <button className="border-2 bg-secondary hover:bg-secondary hover:text-black px-4 py-3 my-8 mx-auto flex items-center rounded-lg">

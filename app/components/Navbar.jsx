@@ -17,7 +17,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-[#FFFB2E]">
+    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-primary">
       <div>
         <Image src={Logo} alt="logo" width={80} height={80} />
       </div>
@@ -136,22 +136,11 @@ const Navbar = () => {
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f65]">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="https://docs.google.com/document/d/e/2PACX-1vR7icKsPWqgK5TCeM-s9Z4LJ80o0dLby96R7aLh7funQUlAmEFo7W_m8RGCpHVdCMQ_YUBVQI48Jxy1/pub"
+              href="https://drive.google.com/file/d/1gcyBdLLrA9ll2Y_8nAj5bVgYTCMKQ5Yq/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
               resume <BsFillPersonLinesFill size={30} />
-            </a>
-          </li>
-
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#fff]">
-            <a
-              className="flex justify-between items-center w-full text-[#1DA1F2]"
-              href="https://twitter.com/Tech__Goddess?t=OQ9_Ywu9MShqvLcxRs41dw&s=09"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              twitter <FaTwitter size={30} />
             </a>
           </li>
         </ul>
