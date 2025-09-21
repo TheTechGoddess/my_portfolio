@@ -6,7 +6,7 @@ import workImg from "../assets/projects/workImg.jpeg";
 import realestate from "../assets/projects/realestate.jpg";
 import madesoftacademy from "../assets/projects/madesoft-academy.png";
 import amnid from "../assets/projects/amnid.png";
-import hrX from "../assets/projects/hrX.png";
+import hrx from "../assets/projects/hrx.png";
 import youverify from "../assets/projects/youverify.png";
 import fitxn from "../assets/projects/fitxn.png";
 import gowa from "../assets/projects/gowa.png";
@@ -330,7 +330,7 @@ const Projects = () => {
 
           {/* HRX */}
           <div
-            style={{ backgroundImage: `url(${hrX.src})` }}
+            style={{ backgroundImage: `url(${hrx.src})` }}
             className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
           >
             {/* hover effects */}
