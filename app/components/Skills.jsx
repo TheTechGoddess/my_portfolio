@@ -17,7 +17,7 @@ import Image from "next/image";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full h-screen bg-[#000] text-[#FDE7EF]">
+    <div name="skills" className="w-full py-10 md:h-screen bg-[#000] text-[#FDE7EF]">
       {/* container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="">
