@@ -57,8 +57,9 @@ const Contact = () => {
               <li className="w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl">
                 <a
                   className="flex justify-between items-center w-full text-[#F8EFF1]"
-                  href="https://drive.google.com/file/d/1gcyBdLLrA9ll2Y_8nAj5bVgYTCMKQ5Yq/view?usp=sharing"
-                  download
+                  href="https://drive.google.com/file/d/1Nr55bZdWDN0N9i7eC8p8qJg0YwU80QB9/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <BsFillPersonLinesFill size={30} />
                 </a>
