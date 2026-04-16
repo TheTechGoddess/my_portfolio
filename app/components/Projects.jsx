@@ -4,7 +4,7 @@ import metabnb from "../assets/projects/meta_bnb.png";
 import nasa_pictures from "../assets/projects/nasa_pictures.png";
 import workImg from "../assets/projects/workImg.jpeg";
 import realestate from "../assets/projects/realestate.jpg";
-import madesoftacademy from "../assets/projects/madesoft-academy.png";
+import engiora from "../assets/projects/engiora.png";
 import amnid from "../assets/projects/amnid.png";
 import hrx from "../assets/projects/hrx.png";
 import youverify from "../assets/projects/youverify.png";
@@ -79,17 +79,41 @@ const Projects = () => {
 
           {/* Madesoft Academy */}
           <div
-            style={{ backgroundImage: `url(${madesoftacademy.src})` }}
+            style={{ backgroundImage: `url(${engiora.src})` }}
             className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
           >
             {/* hover effects */}
             <div className="opacity-0 group-hover:opacity-100 text-center">
               <span className="text-2xl font-bold tracking-wider">
-                Madesoft Academy
+                Engiora
               </span>
               <div className="pt-8 text-center">
                 <a
-                  href="https://madesoftacademy.com/"
+                  href="https://engiora.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                    Visit
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+             {/* SplitQuest */}
+             <div
+            style={{ backgroundImage: `url(${splitquest.src})` }}
+            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
+          >
+            {/* hover effects */}
+            <div className="opacity-0 group-hover:opacity-100 text-center">
+              <span className="text-2xl font-bold tracking-wider">
+                Splitquest
+              </span>
+              <div className="pt-8 text-center">
+                <a
+                  href="https://splitquest.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -283,29 +307,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* SplitQuest */}
-          <div
-            style={{ backgroundImage: `url(${splitquest.src})` }}
-            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
-          >
-            {/* hover effects */}
-            <div className="opacity-0 group-hover:opacity-100 text-center">
-              <span className="text-2xl font-bold tracking-wider">
-                Splitquest
-              </span>
-              <div className="pt-8 text-center">
-                <a
-                  href="https://splitquest.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
-                    Visit
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+       
         </div>
 
         {/* Personal Projects */}

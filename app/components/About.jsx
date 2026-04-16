@@ -22,7 +22,7 @@ const About = () => {
           <div>
             <div className="space-y-3">
               <p>
-                I am Favour Enwonwu, a Frontend Software Engineer with 4 years
+                I am Favour Enwonwu, a Frontend Software Engineer with 5 years
                 of experience building performant web apps in Vue 3/Nuxt 3 and
                 React/Next.js. I specialize in state management (Pinia, Vuex,
                 Zustand. Tanstack Query, Redux Toolkit), modern styling (Tailwind CSS, Vuetify), and scalable UI
