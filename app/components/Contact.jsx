@@ -57,7 +57,7 @@ const Contact = () => {
               <li className="w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl">
                 <a
                   className="flex justify-between items-center w-full text-[#F8EFF1]"
-                  href="https://drive.google.com/file/d/1236CrkJ9aVcYnuo6jDm8xllpf_FpfaUg/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1OHLVoabKoCL_tiqqbJm95QS4MHFK_9hr/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
