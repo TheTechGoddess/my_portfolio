@@ -15,6 +15,7 @@ import loiz from "../assets/projects/loiz.png";
 import compass from "../assets/projects/83compass.png";
 import tms from "../assets/projects/tms.png";
 import splitquest from "../assets/projects/splitquest.png";
+import monager from "../assets/projects/monager.png"
 
 const Projects = () => {
   return (
@@ -274,7 +275,7 @@ const Projects = () => {
                 Aprotime
               </span>
               <div className="pt-8 text-center">
-                <a href="#" target="_blank" rel="noopener noreferrer">
+                <a href="https://aprotime.com/" target="_blank" rel="noopener noreferrer">
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
@@ -400,6 +401,37 @@ const Projects = () => {
                 </a>
                 <a
                   href="https://github.com/TheTechGoddess/HrX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                    Check Code
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+                 {/* Monager */}
+                 <div
+            style={{ backgroundImage: `url(${monager.src})` }}
+            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
+          >
+            {/* hover effects */}
+            <div className="opacity-0 group-hover:opacity-100 text-center">
+              <span className="text-2xl font-bold tracking-wider">Monager</span>
+              <div className="pt-8 text-center">
+                <a
+                  href="https://monager.favourenwonwu.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                    Open Project
+                  </button>
+                </a>
+                <a
+                  href="https://github.com/TheTechGoddess/Monager-Frontend"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
