@@ -31,9 +31,9 @@ const Projects = () => {
           <p className="py-6">Check out some of my projects</p>
         </div>
 
-        {/* Client / Company Projects */}
+        {/* Client / Company Projects — Frontend */}
         <p className="text-xl font-semibold mt-10 mb-4">
-          Client & Company Projects
+          Client & Company Projects Frontend
         </p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {/* Sigma Transaction Monitoring */}
@@ -311,8 +311,10 @@ const Projects = () => {
        
         </div>
 
-        {/* Personal Projects */}
-        <p className="text-xl font-semibold mt-16 mb-4">Personal Projects</p>
+        {/* Frontend Personal Projects */}
+        <p className="text-xl font-semibold mt-16 mb-4">
+          Frontend Personal Projects
+        </p>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
           {/* Meta Bnb */}
           {/* <div
@@ -411,22 +413,28 @@ const Projects = () => {
               </div>
             </div>
           </div>
+        </div>
 
-                 {/* Monager */}
-                 <div
+        {/* Backend / Fullstack Personal Projects */}
+        <p className="text-xl font-semibold mt-16 mb-4">
+          Backend/Fullstack Personal Projects
+        </p>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {/* Monager */}
+          <div
             style={{ backgroundImage: `url(${monager.src})` }}
-            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div"
+            className="shadow-lg shadow-[#23231f] group container rounded-md flex justify-center items-center mx-auto content-div min-h-[240px]"
           >
             {/* hover effects */}
-            <div className="opacity-0 group-hover:opacity-100 text-center">
+            <div className="opacity-0 group-hover:opacity-100 text-center px-2">
               <span className="text-2xl font-bold tracking-wider">Monager</span>
-              <div className="pt-8 text-center">
+              <div className="pt-4 text-center flex flex-wrap justify-center">
                 <a
                   href="https://monager.favourenwonwu.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
+                  <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
                     Open Project
                   </button>
                 </a>
@@ -435,8 +443,17 @@ const Projects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
-                    Check Code
+                  <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
+                    Frontend Code
+                  </button>
+                </a>
+                <a
+                  href="https://github.com/TheTechGoddess/Monager"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
+                    Backend Code
                   </button>
                 </a>
               </div>

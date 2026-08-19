@@ -13,15 +13,24 @@ const Home = () => {
         <p className="text-primary">My name is</p>
         <h1 className="text-4xl sm:text-7xl font-bold">Favour Enwonwu</h1>
         <h2 className="text-4xl sm:text-7xl font-bold text-secondary">
-          Frontend Software Engineer
+          Full-Stack Engineer
         </h2>
-        <p className="text-accent py-4 max-w-[700px]">
-          Frontend Engineer with 4 years of experience building performant web
-          apps in Vue 3/Nuxt 3 and React/Next.js. I specialize in state
-          management (Pinia, Vuex, Zustand. Tanstack Query, Redux Toolkit),
-          modern styling (Tailwind CSS, Vuetify), and scalable UI architectures.
-          I ship clean, accessible interfaces with a strong focus on user goals.
-        </p>
+        <div className="text-accent py-4 max-w-[700px] space-y-3">
+          <p>
+            I&apos;m a Frontend Engineer with 4 years of experience building
+            performant and scalable web applications with Vue 3/Nuxt 3 and
+            React/Next.js. I specialize in state management with Pinia, Vuex,
+            Zustand, TanStack Query, and Redux Toolkit, as well as modern
+            styling with Tailwind CSS and Vuetify.
+          </p>
+          <p>
+            I also have less than a year of hands-on backend experience with
+            Node.js, building APIs, authentication, and data models through
+            full-stack projects. My professional experience is primarily in
+            frontend engineering, with growing practical experience across the
+            backend.
+          </p>
+        </div>
         <div>
           <button className="text-white border-2 px-6 py-3 my-2 flex items-center group hover:bg-secondary rounded-3xl hover:border-[#889]">
             <Link

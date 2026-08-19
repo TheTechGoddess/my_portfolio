@@ -100,7 +100,7 @@ const Navbar = () => {
         </li>
       </ul>
       {/* social icons */}
-      <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
+      <div className="hidden lg:flex fixed flex-col top-[28%] left-0">
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a
@@ -133,14 +133,25 @@ const Navbar = () => {
             </a>
           </li>
 
-          <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-[#565f65]">
+          <li className="w-[200px] h-[60px] flex justify-between items-center ml-[-140px] hover:ml-[-10px] duration-300 bg-[#565f65]">
             <a
               className="flex justify-between items-center w-full text-[#F8EFF1]"
-              href="https://drive.google.com/file/d/1OHLVoabKoCL_tiqqbJm95QS4MHFK_9hr/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ypeaeDeBkwjWpjmT5oLmHWdF8xT1mdFj/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
-              resume <BsFillPersonLinesFill size={30} />
+              frontend CV <BsFillPersonLinesFill size={30} />
+            </a>
+          </li>
+
+          <li className="w-[200px] h-[60px] flex justify-between items-center ml-[-140px] hover:ml-[-10px] duration-300 bg-[#3d4449]">
+            <a
+              className="flex justify-between items-center w-full text-[#F8EFF1]"
+              href="https://drive.google.com/file/d/1Tb4cF31q1BAGRYu_X2txkVlVYavSjIGP/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              backend CV <BsFillPersonLinesFill size={30} />
             </a>
           </li>
         </ul>

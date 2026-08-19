@@ -20,13 +20,14 @@ const Contact = () => {
             Contact Me
           </p>
           <div className="lg:hidden">
-            <ul className="flex justify-between my-8">
+            <ul className="flex flex-wrap justify-center gap-3 my-8">
               <li className="w-[60px] h-[60px] flex duration-300 bg-blue-600 rounded-3xl">
                 <a
-                  className="flex justify-between items-center w-full text-[#F8EFF1]"
+                  className="flex justify-center items-center w-full text-[#F8EFF1]"
                   href="https://www.linkedin.com/in/favour-enwonwu-kc/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                 >
                   <FaLinkedin size={30} />
                 </a>
@@ -34,10 +35,11 @@ const Contact = () => {
 
               <li className="w-[60px] h-[60px] flex duration-300 bg-[#333] rounded-3xl">
                 <a
-                  className="flex justify-between items-center w-full text-[#F8EFF1]"
+                  className="flex justify-center items-center w-full text-[#F8EFF1]"
                   href="https://github.com/TheTechGoddess"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="GitHub"
                 >
                   <FaGithub size={30} />
                 </a>
@@ -45,23 +47,39 @@ const Contact = () => {
 
               <li className="w-[60px] h-[60px] flex duration-300 bg-secondary rounded-3xl">
                 <a
-                  className="flex justify-between items-center w-full text-[#F8EFF1]"
+                  className="flex justify-center items-center w-full text-[#F8EFF1]"
                   href="mailto:favourenwonwukc@gmail.com"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Email"
                 >
                   <HiOutlineMail size={30} />
                 </a>
               </li>
 
-              <li className="w-[60px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl">
+              <li className="w-[72px] h-[60px] flex duration-300 bg-[#565f65] rounded-3xl">
                 <a
-                  className="flex justify-between items-center w-full text-[#F8EFF1]"
-                  href="https://drive.google.com/file/d/1OHLVoabKoCL_tiqqbJm95QS4MHFK_9hr/view?usp=sharing"
+                  className="flex flex-col justify-center items-center w-full text-[#F8EFF1] text-[10px] leading-tight"
+                  href="https://drive.google.com/file/d/1ypeaeDeBkwjWpjmT5oLmHWdF8xT1mdFj/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label="Frontend resume"
                 >
-                  <BsFillPersonLinesFill size={30} />
+                  <BsFillPersonLinesFill size={22} />
+                  <span>FE CV</span>
+                </a>
+              </li>
+
+              <li className="w-[72px] h-[60px] flex duration-300 bg-[#3d4449] rounded-3xl">
+                <a
+                  className="flex flex-col justify-center items-center w-full text-[#F8EFF1] text-[10px] leading-tight"
+                  href="https://drive.google.com/file/d/1Tb4cF31q1BAGRYu_X2txkVlVYavSjIGP/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Backend resume"
+                >
+                  <BsFillPersonLinesFill size={22} />
+                  <span>BE CV</span>
                 </a>
               </li>
             </ul>

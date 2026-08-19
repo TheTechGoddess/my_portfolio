@@ -5,7 +5,6 @@ import CSS from "../assets/css.png";
 import JavaScript from "../assets/javascript.png";
 import Tailwind from "../assets/tailwind.png";
 import MUI from "../assets/mui.png";
-import Github from "../assets/github.png";
 import ReactJs from "../assets/react.png";
 import NuxtJs from "../assets/nuxt.png";
 import VueJs from "../assets/vue.png";
@@ -14,10 +13,16 @@ import Pinia from "../assets/pinia.png";
 import Redux from "../assets/redux.png";
 import TypeScript from "../assets/typescript.png";
 import Image from "next/image";
+import {
+  SiExpress,
+  SiJsonwebtokens,
+  SiMongodb,
+  SiNodedotjs,
+} from "react-icons/si";
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full py-10 md:h-screen bg-[#000] text-[#FDE7EF]">
+    <div name="skills" className="w-full py-10 md:min-h-screen bg-[#000] text-[#FDE7EF]">
       {/* container */}
       <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="">
@@ -147,6 +152,22 @@ const Skills = () => {
               height={80}
             />
             <p>TypeScript</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <SiNodedotjs className="w-20 h-20 text-[#339933]" aria-hidden="true" />
+            <p>Node.js</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <SiExpress className="w-20 h-20 text-[#FDE7EF]" aria-hidden="true" />
+            <p>Express</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <SiMongodb className="w-20 h-20 text-[#47A248]" aria-hidden="true" />
+            <p>MongoDB</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <SiJsonwebtokens className="w-20 h-20 text-[#FDE7EF]" aria-hidden="true" />
+            <p>JWT</p>
           </div>
         </div>
       </div>
