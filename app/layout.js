@@ -3,7 +3,7 @@ import PortfolioAnalyticsTracker from "../components/analytics/PortfolioAnalytic
 
 export const metadata = {
   title: "Tech Goddess Portfolio",
-  description: "Favour Enwonwu — Full-stack engineer with a frontend core",
+  description: "Favour Enwonwu — Software engineer with a Frontend Core",
 };
 
 export default function RootLayout({ children }) {
