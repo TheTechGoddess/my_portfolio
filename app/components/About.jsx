@@ -40,7 +40,7 @@ const About = () => {
                 and building interfaces that solve real user and business needs.
               </p>
               <p>
-                Alongside my frontend experience, I have less than a year of
+                Alongside my frontend experience, I have a year of
                 hands-on backend experience with Node.js. I&apos;ve built APIs,
                 authentication systems, and data models as part of full-stack
                 projects, giving me practical experience working across the

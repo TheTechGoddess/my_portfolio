@@ -24,7 +24,7 @@ const Home = () => {
             styling with Tailwind CSS and Vuetify.
           </p>
           <p>
-            I also have less than a year of hands-on backend experience with
+            I also have a year of hands-on backend experience with
             Node.js, building APIs, authentication, and data models through
             full-stack projects. My professional experience is primarily in
             frontend engineering, with growing practical experience across the
