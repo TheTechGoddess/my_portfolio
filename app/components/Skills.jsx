@@ -71,30 +71,6 @@ const skills = [
     ),
   },
   {
-    name: "Tailwind CSS",
-    render: () => (
-      <Image
-        className="w-20 h-20 object-contain"
-        src={Tailwind}
-        alt="tailwind icon"
-        width={80}
-        height={80}
-      />
-    ),
-  },
-  {
-    name: "Material UI",
-    render: () => (
-      <Image
-        className="w-20 h-20 object-contain"
-        src={MUI}
-        alt="mui icon"
-        width={80}
-        height={80}
-      />
-    ),
-  },
-  {
     name: "React",
     render: () => (
       <Image
@@ -113,6 +89,30 @@ const skills = [
         className="w-20 h-20 object-contain"
         src={NextJs}
         alt="next icon"
+        width={80}
+        height={80}
+      />
+    ),
+  },
+  {
+    name: "Tailwind CSS",
+    render: () => (
+      <Image
+        className="w-20 h-20 object-contain"
+        src={Tailwind}
+        alt="tailwind icon"
+        width={80}
+        height={80}
+      />
+    ),
+  },
+  {
+    name: "Material UI",
+    render: () => (
+      <Image
+        className="w-20 h-20 object-contain"
+        src={MUI}
+        alt="mui icon"
         width={80}
         height={80}
       />
