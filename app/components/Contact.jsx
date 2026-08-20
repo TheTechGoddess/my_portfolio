@@ -3,16 +3,29 @@ import React from "react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import {
+  PUBLIC_EVENT_TYPES,
+  trackPortfolioEvent,
+} from "../../services/analyticsService";
 
 const Contact = () => {
+  const trackLinkClick = (eventType, source) => {
+    trackPortfolioEvent(eventType, { source });
+  };
+
   return (
     <div
       name="contact"
-      className="w-full  bg-black text-[#FDE7EF] flex justify-center items-center p-4"
+      className="w-full h-screen bg-black text-[#FDE7EF] flex justify-center items-center p-4"
     >
       <form
         action="https://getform.io/f/d049b3df-f8b6-4102-84f2-a402bd614d09"
         method="POST"
+        onSubmit={() =>
+          trackPortfolioEvent(PUBLIC_EVENT_TYPES.CONTACT_CLICK, {
+            source: "contact_form_submit",
+          })
+        }
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-8">
@@ -28,6 +41,12 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
+                  onClick={() =>
+                    trackLinkClick(
+                      PUBLIC_EVENT_TYPES.LINKEDIN_CLICK,
+                      "contact_section",
+                    )
+                  }
                 >
                   <FaLinkedin size={30} />
                 </a>
@@ -40,6 +59,12 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
+                  onClick={() =>
+                    trackLinkClick(
+                      PUBLIC_EVENT_TYPES.GITHUB_CLICK,
+                      "contact_section",
+                    )
+                  }
                 >
                   <FaGithub size={30} />
                 </a>

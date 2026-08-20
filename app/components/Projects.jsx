@@ -16,8 +16,28 @@ import compass from "../assets/projects/83compass.png";
 import tms from "../assets/projects/tms.png";
 import splitquest from "../assets/projects/splitquest.png";
 import monager from "../assets/projects/monager.png"
+import ProjectReactionBar from "../../components/reactions/ProjectReactionBar";
+import {
+  PUBLIC_EVENT_TYPES,
+  trackPortfolioEvent,
+} from "../../services/analyticsService";
 
 const Projects = () => {
+  const handleProjectView = (projectId) => {
+    trackPortfolioEvent(PUBLIC_EVENT_TYPES.PROJECT_VIEW, {
+      projectId,
+      source: "projects_section",
+    });
+  };
+
+  const handleProjectGithubClick = (projectId) => {
+    handleProjectView(projectId);
+    trackPortfolioEvent(PUBLIC_EVENT_TYPES.GITHUB_CLICK, {
+      projectId,
+      source: "projects_section",
+    });
+  };
+
   return (
     <div
       name="projects"
@@ -93,12 +113,14 @@ const Projects = () => {
                   href="https://engiora.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("engiora")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="engiora" projectName="Engiora" compact />
             </div>
           </div>
 
@@ -117,12 +139,14 @@ const Projects = () => {
                   href="https://splitquest.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("splitquest")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="splitquest" projectName="Splitquest" compact />
             </div>
           </div>
 
@@ -141,12 +165,14 @@ const Projects = () => {
                   href="https://www.83compass.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("compass83")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="compass83" projectName="83 Compass" compact />
             </div>
           </div>
 
@@ -163,12 +189,14 @@ const Projects = () => {
                   href="https://www.fitxn.co/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("fitxn")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="fitxn" projectName="Fitxn" compact />
             </div>
           </div>
 
@@ -187,12 +215,14 @@ const Projects = () => {
                   href="https://youverify.co/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("youverify-os")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="youverify-os" projectName="Youverify OS" compact />
             </div>
           </div>
 
@@ -209,12 +239,14 @@ const Projects = () => {
                   href="https://amnid-test.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("amnid")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="amnid" projectName="AMNID" compact />
             </div>
           </div>
 
@@ -231,12 +263,14 @@ const Projects = () => {
                   href="https://gowa-frontend.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("gowa")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="gowa" projectName="Gowa" compact />
             </div>
           </div>
 
@@ -255,12 +289,14 @@ const Projects = () => {
                   href="https://loiztravels.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("loiztours")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="loiztours" projectName="LoizTours" compact />
             </div>
           </div>
 
@@ -275,12 +311,18 @@ const Projects = () => {
                 Aprotime
               </span>
               <div className="pt-8 text-center">
-                <a href="https://aprotime.com/" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://aprotime.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => handleProjectView("aprotime")}
+                >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="aprotime" projectName="Aprotime" compact />
             </div>
           </div>
 
@@ -299,12 +341,14 @@ const Projects = () => {
                   href="https://web.tms.youverify.co/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("tms")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Visit
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="tms" projectName="Traffic Management Solutions" compact />
             </div>
           </div>
 
@@ -396,6 +440,7 @@ const Projects = () => {
                   href="https://hr-x.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("hrx")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Open Project
@@ -405,12 +450,14 @@ const Projects = () => {
                   href="https://github.com/TheTechGoddess/HrX"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectGithubClick("hrx")}
                 >
                   <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-black font-bold text-lg">
                     Check Code
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="hrx" projectName="HRX" compact />
             </div>
           </div>
         </div>
@@ -433,6 +480,7 @@ const Projects = () => {
                   href="https://monager.favourenwonwu.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectView("monager")}
                 >
                   <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
                     Open Project
@@ -442,6 +490,7 @@ const Projects = () => {
                   href="https://github.com/TheTechGoddess/Monager-Frontend"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectGithubClick("monager")}
                 >
                   <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
                     Frontend Code
@@ -451,12 +500,14 @@ const Projects = () => {
                   href="https://github.com/TheTechGoddess/Monager"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handleProjectGithubClick("monager")}
                 >
                   <button className="text-center rounded-lg px-3 py-2 m-1 bg-white text-black font-bold text-sm">
                     Backend Code
                   </button>
                 </a>
               </div>
+              <ProjectReactionBar projectId="monager" projectName="Monager" compact />
             </div>
           </div>
         </div>

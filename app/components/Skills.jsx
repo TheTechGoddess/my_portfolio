@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import HTML from "../assets/html.png";
-import CSS from "../assets/css.png";
 import JavaScript from "../assets/javascript.png";
 import Tailwind from "../assets/tailwind.png";
 import MUI from "../assets/mui.png";
@@ -15,6 +13,7 @@ import TypeScript from "../assets/typescript.png";
 import Image from "next/image";
 import {
   SiExpress,
+  SiFirebase,
   SiJsonwebtokens,
   SiMongodb,
   SiNodedotjs,
@@ -36,26 +35,6 @@ const Skills = () => {
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <Image
               className="w-20 h-20 object-contain"
-              src={HTML}
-              alt="html icon"
-              width={80}
-              height={80}
-            />
-            <p>HTML</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
-              src={CSS}
-              alt="css icon"
-              width={80}
-              height={80}
-            />
-            <p>CSS</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
               src={JavaScript}
               alt="javascript icon"
               width={80}
@@ -66,42 +45,12 @@ const Skills = () => {
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <Image
               className="w-20 h-20 object-contain"
-              src={ReactJs}
-              alt="react icon"
+              src={TypeScript}
+              alt="typescript icon"
               width={80}
               height={80}
             />
-            <p>React</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
-              src={NextJs}
-              alt="next icon"
-              width={80}
-              height={80}
-            />
-            <p>Next.js</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
-              src={Tailwind}
-              alt="tailwind icon"
-              width={80}
-              height={80}
-            />
-            <p>Tailwind CSS</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
-              src={MUI}
-              alt="mui icon"
-              width={80}
-              height={80}
-            />
-            <p>Material UI</p>
+            <p>TypeScript</p>
           </div>
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <Image
@@ -126,6 +75,46 @@ const Skills = () => {
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <Image
               className="w-20 h-20 object-contain"
+              src={Tailwind}
+              alt="tailwind icon"
+              width={80}
+              height={80}
+            />
+            <p>Tailwind CSS</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <Image
+              className="w-20 h-20 object-contain"
+              src={MUI}
+              alt="mui icon"
+              width={80}
+              height={80}
+            />
+            <p>Material UI</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <Image
+              className="w-20 h-20 object-contain"
+              src={ReactJs}
+              alt="react icon"
+              width={80}
+              height={80}
+            />
+            <p>React</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <Image
+              className="w-20 h-20 object-contain"
+              src={NextJs}
+              alt="next icon"
+              width={80}
+              height={80}
+            />
+            <p>Next.js</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <Image
+              className="w-20 h-20 object-contain"
               src={Pinia}
               alt="pinia icon"
               width={80}
@@ -144,16 +133,6 @@ const Skills = () => {
             <p>Redux Toolkit</p>
           </div>
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
-            <Image
-              className="w-20 h-20 object-contain"
-              src={TypeScript}
-              alt="typescript icon"
-              width={80}
-              height={80}
-            />
-            <p>TypeScript</p>
-          </div>
-          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <SiNodedotjs className="w-20 h-20 text-[#339933]" aria-hidden="true" />
             <p>Node.js</p>
           </div>
@@ -168,6 +147,16 @@ const Skills = () => {
           <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
             <SiJsonwebtokens className="w-20 h-20 text-[#FDE7EF]" aria-hidden="true" />
             <p>JWT</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <SiFirebase className="w-20 h-20 text-[#FFCA28]" aria-hidden="true" />
+            <p>Firebase</p>
+          </div>
+          <div className="shadow-sm shadow-[#23231f] hover:scale-110 duration-500 p-6 h-40 flex flex-col items-center justify-center gap-4">
+            <span className="text-6xl leading-none" aria-hidden="true">
+              🐻
+            </span>
+            <p>Zustand</p>
           </div>
         </div>
       </div>

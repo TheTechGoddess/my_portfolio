@@ -17,7 +17,7 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 180px;
+  min-height: 260px;
 }
 .content-div:hover {
   background-image: linear-gradient(

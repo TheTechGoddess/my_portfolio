@@ -12,10 +12,19 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import Logo from "../assets/tech_logo.png";
 import { Link } from "react-scroll";
 import Image from "next/image";
+import {
+  PUBLIC_EVENT_TYPES,
+  trackPortfolioEvent,
+} from "../../services/analyticsService";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const handleClick = () => setNav(!nav);
+
+  const trackLinkClick = (eventType, source) => {
+    trackPortfolioEvent(eventType, { source });
+  };
+
   return (
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-primary">
       <div>
@@ -45,8 +54,20 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="contact" smooth={true} duration={500}>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={500}
+              onClick={() =>
+                trackLinkClick(PUBLIC_EVENT_TYPES.CONTACT_CLICK, "navbar_menu")
+              }
+            >
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link to="feedback" smooth={true} duration={500}>
+              Feedback
             </Link>
           </li>
         </ul>
@@ -94,8 +115,29 @@ const Navbar = () => {
           </Link>
         </li>
         <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
+          <Link
+            onClick={() => {
+              handleClick();
+              trackLinkClick(
+                PUBLIC_EVENT_TYPES.CONTACT_CLICK,
+                "navbar_mobile_menu",
+              );
+            }}
+            to="contact"
+            smooth={true}
+            duration={500}
+          >
             Contact
+          </Link>
+        </li>
+        <li className="py-6 text-4xl">
+          <Link
+            onClick={handleClick}
+            to="feedback"
+            smooth={true}
+            duration={500}
+          >
+            Feedback
           </Link>
         </li>
       </ul>
@@ -108,6 +150,12 @@ const Navbar = () => {
               href="https://www.linkedin.com/in/favour-enwonwu-kc/"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackLinkClick(
+                  PUBLIC_EVENT_TYPES.LINKEDIN_CLICK,
+                  "navbar_sidebar",
+                )
+              }
             >
               linkedIn <FaLinkedin size={30} />
             </a>
@@ -119,6 +167,12 @@ const Navbar = () => {
               href="https://github.com/TheTechGoddess"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                trackLinkClick(
+                  PUBLIC_EVENT_TYPES.GITHUB_CLICK,
+                  "navbar_sidebar",
+                )
+              }
             >
               github <FaGithub size={30} />
             </a>

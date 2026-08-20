@@ -53,6 +53,33 @@ const About = () => {
             </div>
           </div>
         </div>
+        <div className="max-w-[1000px] w-full px-4 mt-8 flex sm:justify-end">
+          <div className="relative group inline-block">
+            <button
+              type="button"
+              aria-label="More about this portfolio"
+              className="w-11 h-11 rounded-full border-2 border-primary text-[#FDE7EF] bg-gradient-to-br from-primary to-secondary hover:scale-110 transition-all duration-300 shadow-[0_0_20px_rgba(252,69,138,0.75)] font-bold"
+            >
+              i
+            </button>
+            <div className="pointer-events-none absolute bottom-14 right-0 w-[330px] sm:w-[440px] rounded-xl border-2 border-primary/50 bg-gradient-to-br from-[#14111a] via-[#0b0b0b] to-[#0d1625] text-accent p-5 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 shadow-[0_0_28px_rgba(69,153,252,0.25)]">
+              I hid this because I wasn&apos;t sure you&apos;d care, but I built this
+              little corner of the internet myself. <span className="text-primary">🫣✨</span>
+              <br />
+              It&apos;s powered by <span className="text-secondary font-semibold">Next.js</span>,
+              <span className="text-primary font-semibold"> React</span>,
+              <span className="text-secondary font-semibold"> Tailwind CSS</span>, and
+              <span className="text-primary font-semibold"> Firebase</span>, with a
+              sprinkle of <span className="text-secondary font-semibold">JavaScript</span>{" "}
+              magic behind the scenes.
+              <br />
+              Basically, yes, I did spend an{" "}
+              <span className="text-primary font-semibold">unreasonable amount of time</span>{" "}
+              making a website to tell you that I make websites.{" "}
+              <span className="text-secondary">😂</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
