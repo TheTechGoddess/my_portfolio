@@ -62,7 +62,7 @@ const About = () => {
             >
               i
             </button>
-            <div className="pointer-events-none absolute bottom-14 right-0 w-[330px] sm:w-[440px] rounded-xl border-2 border-primary/50 bg-gradient-to-br from-[#14111a] via-[#0b0b0b] to-[#0d1625] text-accent p-5 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 shadow-[0_0_28px_rgba(69,153,252,0.25)]">
+            <div className="pointer-events-none absolute bottom-14 left-1/2 -translate-x-1/2 w-[calc(100vw-2rem)] max-w-[440px] sm:left-auto sm:translate-x-0 sm:right-0 rounded-xl border-2 border-primary/50 bg-gradient-to-br from-[#14111a] via-[#0b0b0b] to-[#0d1625] text-accent p-4 sm:p-5 text-sm leading-relaxed opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-300 shadow-[0_0_28px_rgba(69,153,252,0.25)]">
               I hid this because I wasn&apos;t sure you&apos;d care, but I built this
               little corner of the internet myself. <span className="text-primary">🫣✨</span>
               <br />
