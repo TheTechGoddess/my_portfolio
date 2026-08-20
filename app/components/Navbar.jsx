@@ -1,11 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FaBars,
   FaTimes,
   FaGithub,
   FaLinkedin,
-  FaTwitter,
 } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -17,16 +16,46 @@ import {
   trackPortfolioEvent,
 } from "../../services/analyticsService";
 
+const MOBILE_MENU_CLOSE_DELAY_MS = 350;
+
 const Navbar = () => {
   const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
+  const [blockClicks, setBlockClicks] = useState(false);
+
+  const openMobileMenu = () => setNav(true);
+
+  const closeMobileMenu = () => {
+    setNav(false);
+    // Keep an invisible overlay briefly so the same tap can't hit reactions underneath.
+    setBlockClicks(true);
+    window.setTimeout(() => setBlockClicks(false), MOBILE_MENU_CLOSE_DELAY_MS);
+  };
+
+  const toggleMobileMenu = () => {
+    if (nav) {
+      closeMobileMenu();
+      return;
+    }
+    openMobileMenu();
+  };
 
   const trackLinkClick = (eventType, source) => {
     trackPortfolioEvent(eventType, { source });
   };
 
+  useEffect(() => {
+    if (!nav) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [nav]);
+
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-primary">
+    <div className="fixed top-0 left-0 z-[200] w-full h-[80px] flex justify-between items-center px-4 bg-[#000] text-primary">
       <div>
         <Image src={Logo} alt="logo" width={80} height={80} />
       </div>
@@ -73,40 +102,70 @@ const Navbar = () => {
         </ul>
       </div>
       {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden z-10">
+      <button
+        type="button"
+        onClick={toggleMobileMenu}
+        className="md:hidden relative z-[220]"
+        aria-label={nav ? "Close menu" : "Open menu"}
+        aria-expanded={nav}
+      >
         {!nav ? (
           <FaBars className="text-2xl" />
         ) : (
           <FaTimes className="text-2xl" />
         )}
-      </div>
+      </button>
+
+      {/* Absorbs leftover mobile taps after the menu closes */}
+      {blockClicks ? (
+        <div
+          className="fixed inset-0 z-[215] bg-transparent"
+          aria-hidden="true"
+        />
+      ) : null}
 
       {/* mobile menu */}
       <ul
         className={
           !nav
             ? "hidden"
-            : "absolute top-0 left-0 w-full h-screen bg-[#000] flex flex-col justify-center items-center"
+            : "fixed inset-0 z-[210] w-full h-screen bg-[#000] flex flex-col justify-center items-center"
         }
+        onClick={(event) => event.stopPropagation()}
       >
         <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="home" smooth={true} duration={500}>
+          <Link
+            onClick={closeMobileMenu}
+            to="home"
+            smooth={true}
+            duration={500}
+          >
             Home
           </Link>
         </li>
         <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
+          <Link
+            onClick={closeMobileMenu}
+            to="about"
+            smooth={true}
+            duration={500}
+          >
             About
           </Link>
         </li>
         <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
+          <Link
+            onClick={closeMobileMenu}
+            to="skills"
+            smooth={true}
+            duration={500}
+          >
             Skills
           </Link>
         </li>
         <li className="py-6 text-4xl">
           <Link
-            onClick={handleClick}
+            onClick={closeMobileMenu}
             to="projects"
             smooth={true}
             duration={500}
@@ -117,7 +176,7 @@ const Navbar = () => {
         <li className="py-6 text-4xl">
           <Link
             onClick={() => {
-              handleClick();
+              closeMobileMenu();
               trackLinkClick(
                 PUBLIC_EVENT_TYPES.CONTACT_CLICK,
                 "navbar_mobile_menu",
@@ -132,7 +191,7 @@ const Navbar = () => {
         </li>
         <li className="py-6 text-4xl">
           <Link
-            onClick={handleClick}
+            onClick={closeMobileMenu}
             to="feedback"
             smooth={true}
             duration={500}
@@ -142,7 +201,7 @@ const Navbar = () => {
         </li>
       </ul>
       {/* social icons */}
-      <div className="hidden lg:flex fixed flex-col top-[28%] left-0">
+      <div className="hidden lg:flex fixed flex-col top-[28%] left-0 z-[190]">
         <ul>
           <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600">
             <a

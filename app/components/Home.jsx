@@ -1,11 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { Link } from "react-scroll";
 
 const Home = () => {
-  const [nav, setNav] = useState(false);
-  const handleClick = () => setNav(!nav);
   return (
     <div name="home" className="w-full h-screen bg-[#000] text-[#FDE7EF] ">
       {/* container */}
@@ -24,27 +22,24 @@ const Home = () => {
             styling with Tailwind CSS and Vuetify.
           </p>
           <p>
-            I also have a year of hands-on backend experience with
-            Node.js, building APIs, authentication, and data models through
-            full-stack projects. My professional experience is primarily in
-            frontend engineering, with growing practical experience across the
-            backend.
+            I also have a year of hands-on backend experience with Node.js,
+            building APIs, authentication, and data models through full-stack
+            projects. My professional experience is primarily in frontend
+            engineering, with growing practical experience across the backend.
           </p>
         </div>
         <div>
-          <button className="text-white border-2 px-6 py-3 my-2 flex items-center group hover:bg-secondary rounded-3xl hover:border-[#889]">
-            <Link
-              onClick={handleClick}
-              to="projects"
-              smooth={true}
-              duration={500}
-            >
-              Projects
-            </Link>
+          <Link
+            to="projects"
+            smooth={true}
+            duration={500}
+            className="text-white border-2 px-6 py-3 my-2 inline-flex items-center group hover:bg-secondary rounded-3xl hover:border-[#889] cursor-pointer"
+          >
+            Projects
             <span className="group-hover:rotate-90 duration-300">
               <HiArrowNarrowRight className="ml-4" />
             </span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>
