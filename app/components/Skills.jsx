@@ -21,9 +21,12 @@ import {
 
 const Skills = () => {
   return (
-    <div name="skills" className="w-full py-10 md:min-h-screen bg-[#000] text-[#FDE7EF]">
+    <div
+      name="skills"
+      className="w-full min-h-screen py-16 md:py-20 bg-[#000] text-[#FDE7EF] flex justify-center items-center"
+    >
       {/* container */}
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
+      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full">
         <div className="">
           <p className="text-4xl font-bold inline border-b-4 border-primary">
             My Skills
