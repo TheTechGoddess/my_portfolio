@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { subscribeToApprovedFeedback } from "../../services/feedbackService";
 
 const ITEMS_PER_PAGE = 6;
+const AUTO_PLAY_MS = 7000;
+const SLIDE_MS = 1600;
 
 const FeedbackCard = ({ item }) => (
   <article className="rounded-2xl border border-[#23231f] bg-[#0b0b0b] p-4 shadow-md shadow-black/40 hover:border-secondary/60 transition-colors duration-300 h-full">
@@ -24,6 +26,8 @@ const ApprovedFeedbackShowcase = () => {
   const [feedbackItems, setFeedbackItems] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -32,6 +36,20 @@ const ApprovedFeedbackShowcase = () => {
     });
 
     return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const updateMotionPreference = () => {
+      setPrefersReducedMotion(mediaQuery.matches);
+    };
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => mediaQuery.removeEventListener("change", updateMotionPreference);
   }, []);
 
   const pages = useMemo(() => {
@@ -53,9 +71,7 @@ const ApprovedFeedbackShowcase = () => {
 
   useEffect(() => {
     if (!sectionRef.current || typeof window === "undefined") return undefined;
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+
     if (prefersReducedMotion) {
       setIsVisible(true);
       return undefined;
@@ -65,7 +81,6 @@ const ApprovedFeedbackShowcase = () => {
       (entries) => {
         if (entries[0]?.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect();
         }
       },
       { threshold: 0.18 },
@@ -73,17 +88,30 @@ const ApprovedFeedbackShowcase = () => {
 
     observer.observe(sectionRef.current);
     return () => observer.disconnect();
-  }, []);
+  }, [prefersReducedMotion]);
 
-  const goToPreviousPage = () => {
-    setCurrentPage((prev) => Math.max(prev - 1, 0));
-  };
+  const goToPreviousPage = useCallback(() => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  }, [totalPages]);
 
-  const goToNextPage = () => {
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
-  };
+  const goToNextPage = useCallback(() => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  }, [totalPages]);
 
-  const visibleItems = pages[currentPage] || [];
+  useEffect(() => {
+    if (!hasCarousel || !isVisible || prefersReducedMotion || isPaused) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(goToNextPage, AUTO_PLAY_MS);
+    return () => window.clearInterval(timer);
+  }, [
+    hasCarousel,
+    isVisible,
+    prefersReducedMotion,
+    isPaused,
+    goToNextPage,
+  ]);
 
   return (
     <div
@@ -108,13 +136,42 @@ const ApprovedFeedbackShowcase = () => {
       ) : (
         <div>
           <div
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
-            aria-live="polite"
-            aria-label={`Feedback page ${currentPage + 1} of ${totalPages}`}
+            className="overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onFocusCapture={() => setIsPaused(true)}
+            onBlurCapture={(event) => {
+              if (!event.currentTarget.contains(event.relatedTarget)) {
+                setIsPaused(false);
+              }
+            }}
           >
-            {visibleItems.map((item) => (
-              <FeedbackCard key={item.id} item={item} />
-            ))}
+            <div
+              className={`flex ${
+                prefersReducedMotion
+                  ? ""
+                  : "transition-transform ease-in-out"
+              }`}
+              style={{
+                transform: `translateX(-${currentPage * 100}%)`,
+                transitionDuration: prefersReducedMotion ? "0ms" : `${SLIDE_MS}ms`,
+              }}
+              aria-live="polite"
+              aria-label={`Feedback page ${currentPage + 1} of ${totalPages}`}
+            >
+              {pages.map((pageItems, pageIndex) => (
+                <div
+                  key={`feedback-page-${pageIndex}`}
+                  className="w-full flex-shrink-0"
+                >
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {pageItems.map((item) => (
+                      <FeedbackCard key={item.id} item={item} />
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
 
           {hasCarousel ? (
@@ -123,9 +180,8 @@ const ApprovedFeedbackShowcase = () => {
                 <button
                   type="button"
                   onClick={goToPreviousPage}
-                  disabled={currentPage === 0}
                   aria-label="Previous feedback"
-                  className="w-10 h-10 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-black disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-black transition-colors duration-300"
                 >
                   <HiChevronLeft size={22} />
                 </button>
@@ -137,9 +193,8 @@ const ApprovedFeedbackShowcase = () => {
                 <button
                   type="button"
                   onClick={goToNextPage}
-                  disabled={currentPage === totalPages - 1}
                   aria-label="Next feedback"
-                  className="w-10 h-10 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-black disabled:opacity-40 disabled:hover:bg-transparent disabled:hover:text-primary transition-colors duration-300"
+                  className="w-10 h-10 rounded-full border-2 border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-black transition-colors duration-300"
                 >
                   <HiChevronRight size={22} />
                 </button>
@@ -148,7 +203,7 @@ const ApprovedFeedbackShowcase = () => {
               <div className="flex flex-wrap justify-center gap-2">
                 {pages.map((_, index) => (
                   <button
-                    key={`feedback-page-${index}`}
+                    key={`feedback-dot-${index}`}
                     type="button"
                     onClick={() => setCurrentPage(index)}
                     aria-label={`Go to feedback page ${index + 1}`}
