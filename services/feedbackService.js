@@ -190,14 +190,13 @@ const getApprovedFeedback = async () => {
     .sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
 };
 
-const subscribeToApprovedFeedback = (callback, limitCount = 6) => {
+const subscribeToApprovedFeedback = (callback) => {
   const approvedQuery = query(publicFeedbackCollection);
 
   return onSnapshot(approvedQuery, (snapshot) => {
     const approvedItems = snapshot.docs
       .map((item) => ({ id: item.id, ...item.data() }))
-      .sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0))
-      .slice(0, limitCount);
+      .sort((a, b) => (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0));
 
     callback(approvedItems);
   });
