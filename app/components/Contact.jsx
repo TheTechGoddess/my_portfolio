@@ -80,8 +80,8 @@ const Contact = () => {
         },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: "New message from portfolio contact form",
-          from_name: "Favour Portfolio",
+          subject: "You have a new message from TechGoddes Portfolio",
+          from_name: "TechGoddess Portfolio Form Submission",
           name,
           email: email || "not_provided",
           message,
