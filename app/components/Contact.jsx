@@ -38,10 +38,28 @@ const tipText = (
 
 const Contact = () => {
   const [isTipOpen, setIsTipOpen] = useState(false);
+  const [formError, setFormError] = useState("");
   const tipRef = useRef(null);
 
   const trackLinkClick = (eventType, source) => {
     trackPortfolioEvent(eventType, { source });
+  };
+
+  const handleSubmit = (event) => {
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    if (!name || !message) {
+      event.preventDefault();
+      setFormError("Please fill in your name and message before submitting.");
+      return;
+    }
+
+    setFormError("");
+    trackPortfolioEvent(PUBLIC_EVENT_TYPES.CONTACT_CLICK, {
+      source: "contact_form_submit",
+    });
   };
 
   useEffect(() => {
@@ -65,11 +83,8 @@ const Contact = () => {
       <form
         action="https://getform.io/f/d049b3df-f8b6-4102-84f2-a402bd614d09"
         method="POST"
-        onSubmit={() =>
-          trackPortfolioEvent(PUBLIC_EVENT_TYPES.CONTACT_CLICK, {
-            source: "contact_form_submit",
-          })
-        }
+        onSubmit={handleSubmit}
+        noValidate
         className="flex flex-col max-w-[600px] w-full"
       >
         <div className="pb-8">
@@ -163,8 +178,10 @@ const Contact = () => {
         </div>
         <input
           type="text"
-          placeholder="Name"
+          placeholder="Name *"
           name="name"
+          required
+          onChange={() => formError && setFormError("")}
           className="p-2 bg-secondary rounded-lg text-black placeholder:text-black"
         />
         <input
@@ -175,11 +192,19 @@ const Contact = () => {
         />
         <textarea
           name="message"
-          placeholder="Type your message here"
+          placeholder="Type your message here *"
           id="message"
           rows="6"
+          required
+          onChange={() => formError && setFormError("")}
           className="bg-secondary p-2 rounded-lg text-black placeholder:text-black"
         ></textarea>
+
+        {formError ? (
+          <p className="text-red-300 mt-4 text-sm" role="alert">
+            {formError}
+          </p>
+        ) : null}
 
         <button
           type="submit"
