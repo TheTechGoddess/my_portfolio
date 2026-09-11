@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
@@ -36,30 +37,75 @@ const tipText = (
   </>
 );
 
+const WEB3FORMS_ACCESS_KEY = "b108d5d9-294f-4ef5-814e-4c7bc7e48194";
+
 const Contact = () => {
+  const router = useRouter();
   const [isTipOpen, setIsTipOpen] = useState(false);
   const [formError, setFormError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const tipRef = useRef(null);
+  const formRef = useRef(null);
 
   const trackLinkClick = (eventType, source) => {
     trackPortfolioEvent(eventType, { source });
   };
 
-  const handleSubmit = (event) => {
+  const clearMessages = () => {
+    if (formError) setFormError("");
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
     const formData = new FormData(event.currentTarget);
     const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
 
     if (!name || !message) {
-      event.preventDefault();
       setFormError("Please fill in your name and message before submitting.");
       return;
     }
 
+    setSubmitting(true);
     setFormError("");
-    trackPortfolioEvent(PUBLIC_EVENT_TYPES.CONTACT_CLICK, {
-      source: "contact_form_submit",
-    });
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New message from portfolio contact form",
+          from_name: "Favour Portfolio",
+          name,
+          email: email || "not_provided",
+          message,
+          botcheck: formData.get("botcheck") ? true : false,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Unable to send your message right now.");
+      }
+
+      formRef.current?.reset();
+      trackPortfolioEvent(PUBLIC_EVENT_TYPES.CONTACT_CLICK, {
+        source: "contact_form_submit",
+      });
+      router.push("/success");
+    } catch (submitError) {
+      setFormError(
+        submitError.message || "Unable to send your message right now.",
+      );
+      setSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -81,8 +127,7 @@ const Contact = () => {
       className="w-full md:min-h-screen py-16 md:py-20 bg-black text-[#FDE7EF] flex flex-col justify-center items-center p-4"
     >
       <form
-        action="https://getform.io/f/d049b3df-f8b6-4102-84f2-a402bd614d09"
-        method="POST"
+        ref={formRef}
         onSubmit={handleSubmit}
         noValidate
         className="flex flex-col max-w-[600px] w-full"
@@ -181,14 +226,17 @@ const Contact = () => {
           placeholder="Name *"
           name="name"
           required
-          onChange={() => formError && setFormError("")}
-          className="p-2 bg-secondary rounded-lg text-black placeholder:text-black"
+          disabled={submitting}
+          onChange={clearMessages}
+          className="p-2 bg-secondary rounded-lg text-black placeholder:text-black disabled:opacity-70"
         />
         <input
           type="email"
           placeholder="Email"
           name="email"
-          className="my-4 p-2 bg-secondary rounded-lg text-black placeholder:text-black"
+          disabled={submitting}
+          onChange={clearMessages}
+          className="my-4 p-2 bg-secondary rounded-lg text-black placeholder:text-black disabled:opacity-70"
         />
         <textarea
           name="message"
@@ -196,9 +244,20 @@ const Contact = () => {
           id="message"
           rows="6"
           required
-          onChange={() => formError && setFormError("")}
-          className="bg-secondary p-2 rounded-lg text-black placeholder:text-black"
+          disabled={submitting}
+          onChange={clearMessages}
+          className="bg-secondary p-2 rounded-lg text-black placeholder:text-black disabled:opacity-70"
         ></textarea>
+
+        {/* Web3Forms honeypot — keep hidden */}
+        <input
+          type="checkbox"
+          name="botcheck"
+          className="hidden"
+          style={{ display: "none" }}
+          tabIndex={-1}
+          autoComplete="off"
+        />
 
         {formError ? (
           <p className="text-red-300 mt-4 text-sm" role="alert">
@@ -208,9 +267,10 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="border-2 bg-secondary hover:bg-secondary hover:text-black px-4 py-3 my-8 mx-auto flex items-center rounded-lg"
+          disabled={submitting}
+          className="border-2 bg-secondary hover:bg-secondary hover:text-black px-4 py-3 my-8 mx-auto flex items-center rounded-lg disabled:opacity-70"
         >
-          Submit
+          {submitting ? "Sending..." : "Submit"}
         </button>
       </form>
 
